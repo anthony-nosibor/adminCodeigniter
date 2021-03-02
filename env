@@ -51,7 +51,7 @@
 # DATABASE
 #--------------------------------------------------------------------
 
- database.default.hostname = localhost
+# database.default.hostname = localhost
  database.default.database = admincodeigniter
  database.default.username = root
  database.default.password = 

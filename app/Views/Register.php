@@ -5,12 +5,14 @@
                     <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
 
                             <?php if(isset($validation)):?>
-                                    <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
+                                    <div class="alert alert-danger"><?= $validation->getError() ?></div>
                                 <?php endif;?>
+
+
                             <form action="<?= base_url('/register/save'); ?>"  method="post" class="login-form">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <h5 class="ml-4">Register</h5>
+                                    <h5 class="ml-4">Inscrivez-vous</h5>
                                     <p class="ml-4">Join to our community now !</p>
                                 </div>
                             </div>
@@ -20,20 +22,29 @@
                                     <input id="username" type="text"  name="name"  value="<?= set_value('name') ?>">
                                     <label for="username" class="center-align">Username</label>
                                 </div>
+                                <?php if(isset($validation)):?>
+                                <span class="red-text text-darken-2"><?php echo $error = $validation->getError('name'); ?></span>
+                                <?php endif;?>
                             </div>
                             <div class="row margin">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix pt-2">mail_outline</i>
                                     <input id="email" type="email" name="email" value="<?= set_value('email') ?>">
-                                    <label for="email">Email</label>
+                                    <label for="email">Email</label>                                    
                                 </div>
+                                <?php if(isset($validation)):?>
+                                <span class="red-text text-darken-2"><?php echo $error = $validation->getError('email'); ?></span>
+                                <?php endif;?>
                             </div>
                             <div class="row margin">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix pt-2">lock_outline</i>
                                     <input id="password" name="password" type="password">
-                                    <label for="password">Password</label>
+                                    <label for="password">Password</label>                                    
                                 </div>
+                                <?php if(isset($validation)):?>
+                                <span class="red-text text-darken-2"><?php echo $error = $validation->getError('password'); ?></span>
+                                <?php endif;?>
                             </div>
                             <div class="row margin">
                                 <div class="input-field col s12">

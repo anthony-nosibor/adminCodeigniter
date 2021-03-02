@@ -3,27 +3,36 @@
             <div class="container">
                 <div id="login-page" class="row">
                     <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
-                   
 
-                        <form action="<?= base_url('/register/save'); ?>"  class="login-form" method="post">
+                    <?php if(isset($validation)):?>
+                            <div class="alert alert-danger"><?= $validation->getError() ?></div>
+                    <?php endif;?>
+
+                        <form action="<?= base_url('/login/connexion'); ?>"  class="login-form" method="post">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <h5 class="ml-4">Sign in</h5>
-          												                      </div>
+                                    <h5 class="ml-4">Connectez-vous</h5>
+          					    </div>
                             </div>
                             <div class="row margin">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix pt-2">person_outline</i>
-                                    <input id="username" type="text"  name="name"  value="">
-                                    <label for="username" class="center-align">Username</label>
+                                    <input type="email"  name="email" >
+                                    <label for="mail" >Saisissez votre Email</label>
                                 </div>
+                                <?php if(isset($validation)):?>
+                                <span class="red-text text-darken-2"><?php echo $error = $validation->getError('email'); ?></span>
+                                <?php endif;?>
                             </div>
                             <div class="row margin">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix pt-2">lock_outline</i>
                                     <input id="password" type="password">
-                                    <label for="password">Password</label>
+                                    <label for="password">Saississez votre mot de passe</label>
                                 </div>
+                                <?php if(isset($validation)):?>
+                                <span class="red-text text-darken-2"><?php echo $error = $validation->getError('password'); ?></span>
+                                <?php endif;?>
                             </div>
                             <div class="row">
                                 <div class="col s12 m12 l12 ml-2 mt-1">
@@ -37,7 +46,7 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <a href="index.html" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Login</a>
+                                    <button class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12" type="submit" >Login</a>
                                 </div>
                             </div>
                             <div class="row">

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
+use CodeIgniter\Controller;
 
-class Home extends BaseController
+class Home extends Controller
 {
 	public function index()
 	{
