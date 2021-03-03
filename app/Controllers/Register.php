@@ -11,15 +11,10 @@ class Register extends Controller
     {
         //include helper form
         helper('form');
-         $data = [
-			'page_title' => 'Register à wwww.site.com' ,
-			'aff_menu'  => false
-		];
+        
+        $this->affichageFormLogin('Register à wwww.site.com',false);
 
-		echo view('common/HeaderAdmin' , 	$data);
-        echo view('register', $data);
-		echo view('common/FooterSite');
-
+		
        
     }
  
@@ -51,12 +46,26 @@ class Register extends Controller
                 'aff_menu'  => false,
                 'validation' => $this->validator
             ];
-    
-            echo view('common/HeaderAdmin' , 	$data);
-            echo view('register', $data);
-            echo view('common/FooterSite');
+            $this->affichageFormLogin($pagetitle='',$affmenu=false,$validation=null);
+            
         }
          
+    }
+
+    private function affichageFormLogin($pagetitle='',$affmenu=false,$validation=null){
+
+
+        $data = [
+            'page_title' =>  $pagetitle,
+            'aff_menu'  => $affmenu,
+            'validation' => $validation
+        ];
+
+        echo view('common/HeaderAdmin' , 	$data);
+        echo view('register', $data);
+        echo view('common/FooterSite');
+
+
     }
  
 }
