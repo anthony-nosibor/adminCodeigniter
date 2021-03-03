@@ -4,7 +4,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UserModel;
  
-class Login extends Controller
+class Login extends BaseController
 {
 	public function index()
 	{	

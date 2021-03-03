@@ -18,8 +18,10 @@ use Psr\Log\LoggerInterface;
  * For security be sure to declare any new methods as protected or private.
  */
 
-class Controller extends Controller
+class BaseController extends Controller
 {
+
+
 	/**
 	 * An array of helpers to be loaded automatically upon
 	 * class instantiation. These helpers will be available
@@ -28,6 +30,11 @@ class Controller extends Controller
 	 * @var array
 	 */
 	protected $helpers = [];
+
+	public function __construct(){
+
+		helper(['url','form']);
+	}
 
 	/**
 	 * Constructor.
