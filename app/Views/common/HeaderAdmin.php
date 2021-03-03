@@ -57,7 +57,7 @@
                   
                         <li class="divider"></li>
                  
-                        <li><a class="grey-text text-darken-1" href="user-login.html"><i class="material-icons">keyboard_tab</i> Logout</a></li>
+                        <li><a class="grey-text text-darken-1" href="<?= base_url('login');?>"><i class="material-icons">keyboard_tab</i> Déconnexion</a></li>
                     </ul>
                 </div>
             
