@@ -20,7 +20,8 @@
                             </a>
                         </div>
                  
-                        
+                        <?= $pager->links() ?>
+
                         <div class="responsive-table">
                             <table class="table invoice-data-table white border-radius-4 pt-1">
                                 <thead>
@@ -54,7 +55,8 @@
                                             <a href=""><?php echo $Artist['id']?></a>
                                         </td>
 
-                                        <td><span class="invoice-amount"><?php echo $Artist['nom']?></span></td>
+                                        <td>
+                                        <span class="invoice-amount"><?php echo $Artist['nom']?></span></td>
 
                                         <td><small><?php echo $Artist['prenom']?></small></td>
 
@@ -72,6 +74,9 @@
                                                 </a>
                                                 <a href="<?php echo base_url("Admin/Artist/edit/".$Artist['id'])?>" class="invoice-action-edit">
                                                     <i class="material-icons">edit</i>
+                                                </a>
+                                                <a href="<?php echo base_url("Admin/Artist/delete/".$Artist['id'])?>" class="invoice-action-delete">
+                                                    <i class="material-icons">delete</i>
                                                 </a>
                                             </div>
                                         </td>

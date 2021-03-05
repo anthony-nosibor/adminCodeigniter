@@ -20,7 +20,8 @@
                             </a>
                         </div>
                  
-                        
+                        <?= $pager->links() ?>
+
                         <div class="responsive-table">
                             <table class="table invoice-data-table white border-radius-4 pt-1">
                                 <thead>
@@ -28,13 +29,11 @@
                                         <!-- data table responsive icons -->
                                         <th></th>
                                         <!-- data table checkbox -->
-                                        <th></th>
+                                        
                                         <th>id</th>
-                                        <th>Nom</th>
-                                        <th>Prénom</th>
-                                        <th>Date de naissance</th>
-                                        <th>Nombre de films</th>
-                                        <th>Action</th>
+                                        <th>Nom du film</th>
+                                        <th>Nom de l'acteur</th>
+                                        <th>Rôle</th>
                                     </tr>
                                 </thead>
                                
@@ -43,35 +42,39 @@
 
                                 <tbody>
                                 <?php 
+
                                 
-                                    foreach($tabArtistes as $Artist){
-                                                                        
+                                        foreach($tabRoles as $Roles){                                        
+                                        $film = $filmModel->where('id',$Roles['id_film'])->first();
+                                        //dd($film);                           
                                 ?>
                                     <tr>
                                         <td></td>
-                                        <td></td>
+                                        <td><small><?php echo $Roles['id_acteur']?></small></td>
                                         <td>
-                                            <a href=""><?php echo $Artist['id']?></a>
+                                            <a><?php echo $film['titre']?></a>
                                         </td>
+                                         
+                                        <td>
+                                        <span class="invoice-amount"></span></td>
+                                        
 
-                                        <td><span class="invoice-amount"><?php echo $Artist['nom']?></span></td>
+                                        <td><small><?php echo $Roles['nom_role']?></small></td>
 
-                                        <td><small><?php echo $Artist['prenom']?></small></td>
-
-                                        <td><span class="invoice-customer"><?php echo $Artist['annee_naissance']?></span></td>
+                                        <td><span class="invoice-customer"></span></td>
 
                                         <td>
                                             <span class="bullet green"></span>
-                                            <small><?php echo $Artist['id']?></small>
+                                            <small></small>
                                         </td>
 
                                         <td>
-                                            <div class="invoice-action">
-                                                <a href="app-invoice-view.html" class="invoice-action-view mr-4">
-                                                    <i class="material-icons">remove_red_eye</i>
-                                                </a>
-                                                <a href="<?php echo base_url("Admin/Artist/edit/".$Artist['id'])?>" class="invoice-action-edit">
+                                            
+                                                <a href="<?php echo base_url("Admin/Role/edit/".$Roles['id_film'])?>" class="invoice-action-edit">
                                                     <i class="material-icons">edit</i>
+                                                </a>
+                                                <a href="<?php echo base_url("Admin/Role/delete/".$Roles['id_film'])?>" class="invoice-action-delete">
+                                                    <i class="material-icons">delete</i>
                                                 </a>
                                             </div>
                                         </td>
@@ -88,7 +91,5 @@
         </div>
     </div>
 </div>               
-
-
 
 
