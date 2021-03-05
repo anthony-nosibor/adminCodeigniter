@@ -56,7 +56,7 @@
                                         </td>
                                          
                                         <td>
-                                        <span class="invoice-amount"></span></td>
+                                        <span class="invoice-amount"><?php echo $film['titre']?></span></td>
                                         
 
                                         <td><small><?php echo $Roles['nom_role']?></small></td>
