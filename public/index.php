@@ -42,3 +42,5 @@ $app       = require realpath($bootstrap) ?: $bootstrap;
  * up the engines and make this app do its thang.
  */
 $app->run();
+//echo view('common/HeaderSite');
+//echo view('common/FooterSite');

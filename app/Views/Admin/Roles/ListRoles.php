@@ -46,7 +46,8 @@
                                 
                                         foreach($tabRoles as $Roles){                                        
                                         $film = $filmModel->where('id',$Roles['id_film'])->first();
-                                        //dd($film);                           
+                                        $Artistes = $artistModel->where('id',$Roles['id_acteur'])->first();
+                                                                  
                                 ?>
                                     <tr>
                                         <td></td>
@@ -56,7 +57,7 @@
                                         </td>
                                          
                                         <td>
-                                        <span class="invoice-amount"><?php echo $film['titre']?></span></td>
+                                        <span class="invoice-amount"><?php echo $Artistes['nom'];echo ' ' ;echo $Artistes['prenom']  ?></span></td>
                                         
 
                                         <td><small><?php echo $Roles['nom_role']?></small></td>

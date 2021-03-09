@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loading" lang="fr" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
 <head>
@@ -57,7 +57,7 @@
                   
                         <li class="divider"></li>
                  
-                        <li><a class="grey-text text-darken-1" href="<?= base_url('login');?>"><i class="material-icons">keyboard_tab</i> Déconnexion</a></li>
+                        <li><a class="grey-text text-darken-1" href="<?= base_url('/login/logout');?>"><i class="material-icons">keyboard_tab</i> Déconnexion</a></li>
                     </ul>
                 </div>
             

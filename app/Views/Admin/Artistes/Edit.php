@@ -23,7 +23,7 @@
                                     <div class="card-content">
                                         <h4 class="card-title">Formulaire de modification et d'ajout</h4>
 
-                                        <form  method="POST" action="<?php echo base_url('Admin/Artist/Edit/'.$formArtist['id']);?>">
+                                        <form  method="POST" action="<?php echo base_url('Admin/Artist/edit/'.$formArtist['id']);?>">
                                           <!-- Je cache mon champs pour lui dire que je suis dans le mode modifier-->
 
                                            <?php if(isset($formArtist['id'])){ ?>
